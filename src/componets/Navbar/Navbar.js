@@ -1,16 +1,17 @@
-import "./Navbar.css"
+import CartWidget from "../CartWidget/CartWidget"
+import { Link } from "react-router-dom"
 
 const Navbar = () =>{
     return(
-        <nav className="Navbar"> 
-            <h1>Potterland</h1>
-                <ul>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Coleccionables</a></li>
-                    <li><a href="#">Peliculas y libros</a></li>
-                    <li><a href="#"> Contacto</a></li>
-                </ul>
-            </nav>
+
+        <nav style={{display: "flex", justifyContent: "space-around"}}>
+            <h1>Katys Beuaty</h1>
+        <div>
+        <Link to='/category/Peliculas' style={{margin:10}}>Peliculas</Link>
+        <Link to='/category/Libros'> Libros</Link>
+        </div>
+        <CartWidget/>
+        </nav>
     )
 }
 

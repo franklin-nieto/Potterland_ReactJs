@@ -1,16 +1,20 @@
 import './App.css';
-import Navbar from './componets/Navbar/Navbar';
-import CartWidget from './componets/CartWidget/CartWidget';
+import {BrowserRouter,Route, Routes} from 'react-router-dom'
 import ItemListContainer from './componets/ItemListContainer/ItemListContainer';
+import Navbar from './componets/NavBar/Navbar';
+import ItemDetailContainer from './componets/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <div className="App">
-      <CartWidget/>
-      <header className="App-header">
-        <Navbar/>
-        <ItemListContainer greeting={"Bienvenidos a Potterland"}/>
-      </header>
+     <BrowserRouter>
+     <Navbar/>
+     <Routes>
+      <Route path='/' element={<ItemListContainer/>}/>
+      <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+      <Route path='/item/:productId' element={<ItemDetailContainer/>} />
+     </Routes>
+     </BrowserRouter>
     </div>
   );
 }
