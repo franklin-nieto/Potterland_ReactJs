@@ -5,7 +5,7 @@ const Navbar = () =>{
     return(
 
         <nav style={{display: "flex", justifyContent: "space-around"}}>
-            <h1>Katys Beuaty</h1>
+            <h1>Potterland</h1>
         <div>
         <Link to='/category/Peliculas' style={{margin:10}}>Peliculas</Link>
         <Link to='/category/Libros'> Libros</Link>
