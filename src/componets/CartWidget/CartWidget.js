@@ -1,8 +1,11 @@
-import "./CartWidget.css";
+import { Link } from "react-router-dom"
 
-const CartWidget = () =>{
+const CartWidget = ({ totalQuantity }) =>{
     return(
-        <h1 className="CartWidget">🛒 0</h1>
+        <Link className="CartWidget">
+            <img src="https://emojigraph.org/media/microsoft/shopping-cart_1f6d2.png" alt="cart-widget" className="CartImg"/>
+                { totalQuantity }
+        </Link>
     )
 }
 
