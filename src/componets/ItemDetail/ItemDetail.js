@@ -8,7 +8,7 @@ const ItemDetail = ({id, nombre, img,precio, category,stock}) =>{
    
     const [quantity, setQuantity] = useState (0)
 
-    const { addItem, isInCart } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
     const handleOnAdd = (quantity) =>{
         console.log(`Se agregaron al carrito ${quantity} ${nombre} con el id: ${id}`)
@@ -28,7 +28,7 @@ const ItemDetail = ({id, nombre, img,precio, category,stock}) =>{
             <img src={img} alt={nombre} className="imagen-item"/>
             <p className="precio-item">${precio}</p>
             {
-                isInCart(id)  ?(
+                quantity>0  ?(
                     <Link to='/cart'>Terminar Compra</Link>
                 ) :(
                 <ItemCount stock={stock} onAdd={handleOnAdd}/>
